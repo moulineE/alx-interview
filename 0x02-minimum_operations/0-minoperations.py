@@ -15,13 +15,12 @@ def minOperations(n: int) -> int:
     """
     op = 0
     i = 1
-    tmp = 0
     while i < n:
         if n % i == 0:
             tmp = i
             op += 2
             i += tmp
         else:
-            i += i
+            i += tmp
             op += 1
     return op
