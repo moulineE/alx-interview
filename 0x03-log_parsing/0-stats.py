@@ -41,4 +41,3 @@ if __name__ == '__main__':
                 print_logs_stats(codes, total_size)
     finally:
         print_logs_stats(codes, total_size)
-        raise
