@@ -4,14 +4,13 @@ import sys
 import re
 
 
-codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-total_size = 0
-pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
-           r' \[.*] "GET /projects/260 HTTP/1.1" \d{3,3} \d{1,}')
-count = 0
-
-
 if __name__ == '__main__':
+    codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    total_size = 0
+    pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
+               r' \[.*] "GET /projects/260 HTTP/1.1" \d{3,3} \d{1,}')
+    count = 0
+
     def print_logs_stats(codes: dict, total_size: int) -> None:
         """print the logs stats
         Args:
