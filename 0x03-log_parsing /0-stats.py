@@ -28,10 +28,13 @@ if __name__ == '__main__':
             if re.match(pattern, line):
                 count += 1
                 data = line.split()
-                total_size += int(data[-1])
-                code = int(data[-2])
-                if code in codes:
-                    codes[code] += 1
+                try:
+                    total_size += int(data[-1])
+                    code = int(data[-2])
+                    if code in codes:
+                        codes[code] += 1
+                except BaseException:
+                    pass
             if count % 10 == 0:
                 print_logs_stats(codes, total_size)
         print_logs_stats(codes, total_size)
