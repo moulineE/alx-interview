@@ -34,12 +34,13 @@ if __name__ == '__main__':
                     code = int(data[-2])
                     if code in codes:
                         codes[code] += 1
-                except BaseException:
-                try:
-                    total_size += int(data[-1])
-                except BaseException:
+                except Exception:
+                    continue
+                total_size += int(data[-1])
+
             if count % 10 == 0 and count != 0:
                 print_logs_stats(codes, total_size)
         print_logs_stats(codes, total_size)
     except KeyboardInterrupt:
         print_logs_stats(codes, total_size)
+        raise
