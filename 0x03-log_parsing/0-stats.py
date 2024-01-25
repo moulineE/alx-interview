@@ -21,7 +21,7 @@ if __name__ == '__main__':
             total_size (int): the total size of the logs
         """
         print("File size: {:d}".format(total_size))
-        for code in codes:
+        for code in sorted(codes):
             if codes[code] != 0:
                 print("{}: {:d}".format(code, codes[code]))
 
@@ -42,4 +42,3 @@ if __name__ == '__main__':
         print_logs_stats(codes, total_size)
     finally:
         print_logs_stats(codes, total_size)
-        raise
