@@ -39,6 +39,7 @@ if __name__ == '__main__':
                     continue
             if count % 10 == 0 and count != 0:
                 print_logs_stats(codes, total_size)
+        print_logs_stats(codes, total_size)
     except KeyboardInterrupt:
         print_logs_stats(codes, total_size)
         raise
