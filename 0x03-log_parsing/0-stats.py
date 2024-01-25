@@ -35,7 +35,7 @@ if __name__ == '__main__':
                     if code in codes:
                         codes[code] += 1
                 except Exception:
-                    continue
+                    pass
                 total_size += int(data[-1])
 
             if count % 10 == 0 and count != 0:
