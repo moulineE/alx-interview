@@ -9,7 +9,7 @@ pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
 count = 0
 
 
-def print_logs_stats(codes: dict, total_size: int) -> None:
+def print_logs_stats(codes, total_size):
     """print the logs stats
     Args:
         codes (dict): the status codes and frequency
