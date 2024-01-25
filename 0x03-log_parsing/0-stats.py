@@ -37,9 +37,7 @@ if __name__ == '__main__':
                         codes[code] += 1
                 except BaseException:
                     continue
-            if count % 10 == 0:
+            if count % 10 == 0 and count != 0:
                 print_logs_stats(codes, total_size)
-        print_logs_stats(codes, total_size)
     finally:
         print_logs_stats(codes, total_size)
-        sys.exit(0)
