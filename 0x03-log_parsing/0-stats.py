@@ -11,7 +11,7 @@ if __name__ == '__main__':
     }
     total_size = 0
     pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
-               r' \[.*] "GET /projects/260 HTTP/1.1" (.{3}) \d{1,}')
+               r' \[.*] "GET /projects/260 HTTP/1.1" (.*) \d{1,}')
     count = 0
 
     def print_logs_stats(codes: dict, total_size: int) -> None:
