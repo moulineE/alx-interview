@@ -6,8 +6,8 @@ import re
 
 if __name__ == '__main__':
     codes = {
-        "200": 0, "301": 0, "400": 0, "401": 0,
-        "403": 0, "404": 0, "405": 0, "500": 0
+        200: 0, 301: 0, 400: 0, 401: 0,
+        403: 0, 404: 0, 405: 0, 500: 0
     }
     total_size = 0
     pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
@@ -21,9 +21,9 @@ if __name__ == '__main__':
             total_size (int): the total size of the logs
         """
         print("File size: {:d}".format(total_size))
-        for code in sorted(codes):
+        for code in codes:
             if codes[code] != 0:
-                print("{}: {:d}".format(code, codes[code]))
+                print("{:d}: {:d}".format(code, codes[code]))
 
     try:
         for line in sys.stdin:
@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 count += 1
                 data = line.split()
                 try:
-                    code = data[-2]
+                    code = int(data[-2])
                     if code in codes:
                         codes[code] += 1
                 except BaseException:
