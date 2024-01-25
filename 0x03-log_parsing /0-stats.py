@@ -2,6 +2,8 @@
 """a script that reads stdin line by line and computes metrics"""
 import sys
 import re
+
+
 codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 total_size = 0
 pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
@@ -9,7 +11,7 @@ pattern = (r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3} -'
 count = 0
 
 
-def print_logs_stats(codes, total_size):
+def print_logs_stats(codes: dict, total_size: int) -> None:
     """print the logs stats
     Args:
         codes (dict): the status codes and frequency
