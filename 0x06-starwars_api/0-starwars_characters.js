@@ -4,7 +4,7 @@ const util = require('util');
 const requestPromise = util.promisify(request);
 const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 
-async function getCharactersInRightOrder(url) {
+async function getCharactersInRightOrder (url) {
   try {
     const response = await requestPromise(url);
     const chars = JSON.parse(response.body).characters;
