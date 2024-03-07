@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """0x09. Island Perimeter module"""
-from typing import List
 
 
-def island_perimeter(grid: List[List]) -> int:
+def island_perimeter(grid) -> int:
     """
     function that returns the perimeter of the island described in grid
     :param grid:
