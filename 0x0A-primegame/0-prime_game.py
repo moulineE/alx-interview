@@ -9,11 +9,14 @@ def isWinner(x: int, nums):
     ben = 0
     maria = 0
     primes = sieve_of_eratosthenes(max(nums) + 1)
+    maria_turn = True
     for n in nums:
-        if n in primes:
-            ben += 1
-        else:
-            maria += 1
+        turn_prime = [i for i in primes if i <= n]
+        if maria_turn:
+            if len(turn_prime) % 2 == 0:
+                ben += 1
+            else:
+                maria += 1
     if ben == maria:
         return None
     return "Maria" if maria > ben else "Ben"
